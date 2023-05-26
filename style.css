@@ -1,0 +1,289 @@
+body {
+			background-image: url('https://source.unsplash.com/random/160×90/?abstract');
+			background-attachment: fixed;
+		}
+    h1 {
+      text-align: center;
+      padding-top: 15vh;
+      color: white;
+      opacity: 50px;
+      text-shadow: 0px 0px 5px rgba(0, 0, 0, 8);
+    }
+    .card{
+      border-radius: 25px;
+      dor-filter: blur(10px);
+      color: white;
+      margin: 20px;
+      padding: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      background-color: rgba(1, 1, 1, 0.5);
+    }
+    .card .img{
+      border-radius: 20px;
+    }
+    .card a{
+      text-decoration: none;
+      color: white;
+    }
+    .card li{
+      list-style: none;
+      padding: 10px;
+      font-size: 32px;
+      display:inline-block;
+      align-items: center;
+      margin-inline-end: 0px;
+    }
+    .card .google-map{
+      border-radius:15px;
+      border: none;
+      width:;
+    }
+    .card h2{
+      text-align: center;
+      color: white;
+    }
+		.search-box {
+			margin: auto;
+			margin-top: 3vh;
+			width: 80%;
+			height: 70px;
+			border-radius: 50px;
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0 20px;
+			backdrop-filter:saturate(180%) blur(50px);
+		}
+
+		.search-box input[type="text"] {
+			border: none;
+			outline: none;
+			background-color: transparent;
+			width: 100%;
+			height: 50%;
+			font-size: 24px;
+			font-weight: 300;
+		}
+
+		.search-box button {
+			background-color: transparent;
+			color: black;
+			border: none;
+			outline: none;
+			height: 50px;
+			width: 50px;
+			border-radius: 100px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 24px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+		}
+
+		.search-box button i {
+			font-size: 32px;
+		}
+		.search-box button i:hover {
+			transform: scale(1.5);
+		}
+		.search-box select {
+		  background-color: transparent;
+		  border: 2px solid black;
+		  margin :10px;
+		  color: black;
+		  border-radius: 50px;
+		  padding: 5px;
+		  outline-color: transparent;
+	    width: auto;
+		}
+		
+	  /*chat bot*/
+    .chat-container {
+    	backdrop-filter: blur(10px);
+    	border-radius: 20px;
+    	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    	margin: 15px;
+    	max-width: 600px;
+    	overflow: hidden;
+    }
+    .header {
+    	background-color: black;
+    	color: #fff;
+    	font-size: 24px;
+    	padding: 3px;
+    	text-align: center;
+    }
+    
+    .chat-area {
+    	height: 400px;
+    	overflow-y: scroll;
+    	padding: 10px;
+    }
+    
+    .chat-area .info{
+      background-color: lightgrey;
+      border-radius: 15px;
+      padding: 3px;
+      text-align: center;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+    .chat-box {
+    	border-radius: 20px;
+    	clear: both;
+    	margin-bottom: 10px;
+    	width: auto;
+    	max-width: 80%;
+    	padding: 10px;
+    	padding-top: 0px;
+    	padding-bottom: 0px;
+    }
+    
+    .user {
+    	background-color: #5a9bd4;
+    	color: black;
+    	float: right;
+    }
+    
+    .bot {
+    	background-color: #ddd;
+    	float: left;
+    }
+    
+    .input-area {
+    	border-top: 1px solid #ccc;
+    	padding: 10px;
+    }
+    
+    .input-area input {
+    	border: none;
+    	border-radius: 20px;
+    	padding: 10px;
+    	width: 80%;
+    	outline-color: #5a9bd4;
+    }
+    
+    .input-area button {
+    	background-color: #5a9bd4;
+    	border: none;
+    	border-radius: 20px;
+    	color: #fff;
+    	cursor: pointer;
+    	padding: 10px 10px;
+    	width: 18%;
+    }
+    
+    
+    /*float and popup"*/
+    .float-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: auto;
+      height: 50px;
+      padding: 15px;
+      border-radius: 20px;
+      background-color: #007aff;
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      border: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+    .float-btn a{
+      text-decoration: none;
+      color:white;
+    }
+    .float-btn i{
+      font-size: 32;
+    }
+    .float-btn:focus {
+      outline: none;
+    }
+    
+    .float-btn:hover {
+      background-color: #0062cc;
+    }
+    
+    .clock {
+      padding-top:5rem;
+      text-align: center;
+    }
+    
+    #time {
+      font-size: 5rem;
+      font-weight: bold;
+      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    #date {
+      font-size: 1rem;
+      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .cardfot{
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      background-color: rgba(1, 1, 1, 0.5);
+      color: white;
+      padding: 5px;
+      text-align: center;
+      margin: 10px;
+      border-radius: 25px;
+    }
+    .cardfot a{
+      text-decoration: none;
+      font-size: 15px;
+      padding: 5px;
+      color: white;
+      height: 50px;
+    }
+    
+    .player {
+      text-align: center;
+      margin-top: 10px;
+    }
+    
+    .cover-art {
+      width: 250px;
+      height: 200px;
+      border-radius: 25px;
+      overflow: hidden;
+      margin: 0 auto 5px;
+    }
+    
+    .cover-art img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .song-name {
+      font-size: 20px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      word-wrap: ;
+    }
+    
+    .controls {
+      margin-top: 10px;
+    }
+    
+    button {
+      padding: 10px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      color: rgb(255,255,255,0.6);
+    }
+    button .q{
+      font-size: 30px;
+      vertical-align: middle;
+    }
+    button .p{
+      font-size: 50px;
+      vertical-align: middle;
+    }
