@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/bg.jpg" type="image/x-icon" />
+	<title>Home</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+    <div class="clock">
+      <div id="time"></div>
+      <div id="date"></div>
+  </div>
+	<div class="search-box">
+		<input type="text" id="searchInput" placeholder="Cari...">
+   	<select id="searchEngine" name="searchEngine">
+  		<option value="google">Google</option>
+  		<option value="bing">Bing</option>
+      <option value="yandex">Yandex</option>
+  		<option value="DuckDuckGo">Duck²Go</option>
+  	</select>
+		<button><i class="material-icons" onclick="search()">search</i></button>
+	</div>
+	<div class="card">
+	  <h2>Music</h2>
+	  <div class="card">
+<div class="player">
+    <div class="cover-art">
+      <img src="img/bg.jpg" alt="" id="coverImage">
+    </div>
+    <div id="songName" class="song-name">Artist - Song Title</div>
+    <audio id="audioPlayer" controls hidden="true">
+      <source src="" type="audio/mp3" id="audioSource">
+    </audio>
+    <div class="controls">
+      <button id="previousBtn"><i class="fas fa-step-backward q"></i></button>
+      <button id="playBtn"><i class="fas fa-play p"></i></button>
+      <button id="nextBtn"><i class="fas fa-step-forward q"></i></button>
+    </div>
+  </div>
+	  </div>
+	</div>
+  
+	<div class="card">
+	  <h2>Apps</h2>
+	  <div class="card">
+	    <ul>
+	      <li><a href="https://v.whatsapp.com"><i class="fa fa-whatsapp"></i></a></li>
+	      <li><a href="https://github.com"><i class="fa fa-github"></a></i></li>
+	      <li><a href="https://twitter.com"><i class="fa fa-twitter"></a></i></li>
+	      <li><a href="https://facebook.com"><i class="fa fa-facebook"></a></i></li>
+	      <li><a href="https://applink.instagram.com"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="https://google.com"><i class="fa fa-google"></i></a></li>
+	      <li><a href="https://spotify.com"><i class="fa fa-spotify"></a></i></li>
+	      <li><a href="https://m.youtube.com"><i class="fa fa-youtube"></i></a></li>
+	    </ul>
+	  </div>
+	</div>
+	<div class="card">
+	  <h2>Sites</h2>
+	  <div class="card">
+	    <ul>
+	      <li><a href="https://y2mate.com"><i class="fa fa-download"></i></a></li>
+	      <li><a href="https://geogebra.com"><i class="fa fa-calculator"></a></i></li>
+	      <li><a href="bot.html"><i class="fa fa-comment"></a></i></li>
+	      <li><a href="https://chat.openai.com"><i class="fa fa-robot"></a></i></li>
+	      <li><a href="https://phasesmoon.com"><i class="fa fa-moon"></i></a></li>
+        <li><a href="http://hamdillah.epizy.com/?i=1"><i class="fa fa-user"></i></a></li>
+	      <li><a href="https://accuweather.com"><i class="fa fa-cloud"></i></a></li>
+	      <li><a href="https://88.210.14.111/"><i class="fa fa-film"></i></a></li>
+	    </ul>
+	  </div>
+	</div>
+	<div class="card">
+	  <h2>Random Image</h2>
+	  <div>
+	    <img width="100%" class="img" src="https://source.unsplash.com/random/800×800/?nature" alt="" />
+	  </div>
+	</div>
+	<div class="card in">
+	  <h2>Maps</h2>
+ <iframe class="google-map" src="https://www.google.com/maps/embed?!1m18!1m12!1m3!1d3964.940045536862!2d106.81638031539354!3d-6.4017266643944675!2m3!1f0!2f0!3f0" width="100%" height="371.59" allowfullscreen="" loading="lazy"></iframe>
+	</div>
+<button class="float-btn"><a href="bot.html">Ask Bot. |  <i class="fa fa-comment"></i></a></button>
+<footer class="cardfot">
+  <p>created by<a href="http://hamdillah.epizy.com/?i=1">| Hamdi</a></p>
+</footer>
+</body>
+	<script src="script.js"></script>
+<script src="https://kit.fontawesome.com/fddf5c0916.js" crossorigin="anonymous"></script>
+<script type="text/javascript" charset="utf-8">
+function updateTime() {
+  const now = new Date();
+  
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+  const timeString = `${hours}:${minutes}`;
+  document.getElementById('time').textContent = timeString;
+  
+  const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+  const dateString = now.toLocaleDateString('en-US', dateOptions);
+  document.getElementById('date').textContent = dateString;
+}
+
+setInterval(updateTime, 1000);
+
+const audioPlayer = document.getElementById('audioPlayer');
+const audioSource = document.getElementById('audioSource');
+const playBtn = document.getElementById('playBtn');
+const nextBtn = document.getElementById('nextBtn');
+const previousBtn = document.getElementById('previousBtn');
+const songNameElement = document.getElementById('songName');
+const coverImageElement = document.getElementById('coverImage');
+
+let playlist = [
+  { name: 'Lil Nas X - Industry Baby', path: 'music/Lil Nas X Industry Baby.mp3', cover: 'img/song-bg.jpg' },
+  { name: 'ABBA - Slipping Trough My Fingers', path: 'music/slipping through my fingers.mp3', cover: 'img/bg.jpg' },
+  { name: 'Stephen Sanchez - Until I Found You', path: 'music/Until i found you.mp3', cover: 'img/img.jpg' }
+];
+
+let currentSongIndex = 0;
+
+function playSong() {
+  audioSource.src = playlist[currentSongIndex].path;
+  audioPlayer.load();
+  audioPlayer.play();
+  playBtn.innerHTML = '<i class="fas fa-pause p"></i>';
+  updateSongInfo();
+}
+
+function pauseSong() {
+  audioPlayer.pause();
+  playBtn.innerHTML = '<i class="fas fa-play p"></i>';
+}
+
+function nextSong() {
+  currentSongIndex++;
+  if (currentSongIndex >= playlist.length) {
+    currentSongIndex = 0;
+  }
+  playSong();
+}
+
+function previousSong() {
+  currentSongIndex--;
+  if (currentSongIndex < 0) {
+    currentSongIndex = playlist.length - 1;
+  }
+  playSong();
+}
+
+function updateSongInfo() {
+  const songName = playlist[currentSongIndex].name;
+  const coverImage = playlist[currentSongIndex].cover;
+  songNameElement.textContent = songName;
+  coverImageElement.src = coverImage;
+}
+
+playBtn.addEventListener('click', function() {
+  if (audioPlayer.paused) {
+    playSong();
+  } else {
+    pauseSong();
+  }
+});
+
+nextBtn.addEventListener('click', nextSong);
+previousBtn.addEventListener('click', previousSong);
+</script>
+</html>
